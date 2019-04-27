@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ningdali</groupId>
+  <artifactId>clothRecyleBin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>clothRecyleBin Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!-- 时间操作组件 -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+    <!--工具类-->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.9</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <!--文件上传以及下载的包-->
+    <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.6</version>
+    </dependency>
+    <!--客户端类-->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.8</version>
+    </dependency>
+    <!-- quartz任务调度框架 -->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+    <!--日志-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.8.0-beta4</version>
+      <!--<scope>test</scope>-->
+    </dependency>
+    <!--json处理-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.57</version>
+    </dependency>
+    <dependency>
+      <!--单元测试-->
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <!--数据库连接-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.36</version>
+    </dependency>
+    <!--lombok-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.6</version>
+    </dependency>
+    <!--mybatis整合spring框架-->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>2.0.1</version>
+      </dependency>
+    <!--mybatis分页工具-->
+    <dependency>
+      <groupId>com.github.miemiedev</groupId>
+      <artifactId>mybatis-paginator</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>5.1.8</version>
+    </dependency>
+    <!--mybatis框架-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+    <!--alibaba连接池-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.9</version>
+    </dependency>
+    <!--spring框架部分-->
+    <!--spring核心包，为Spring核心提供了大量扩展-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--访问配置文件、创建和管理bean以及一些用于ioc的类-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--包含Spring MVC框架相关的所有类-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--包含对Spring对JDBC数据访问进行封装的所有类-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--Spring提供的对AspectJ框架的整合-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--这个jar包提供了对JMS 1.0.2/1.1的支持类。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!--包含支持缓存Cache（ehcache）、JCA、JMX、 邮件服务（Java Mail、COS Mail）、任务计划Scheduling（Timer、Quartz）方面的类。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>5.1.6.RELEASE</version>
+    </dependency>
+    <!-- JSP相关 -->
+    <!--就是c标签那个-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!--就是httpServletRequest和response-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <!--编译的时候用这个包，发布的时候用tomcat-->
+      <scope>provided</scope>
+    </dependency>
+    <!--提供jsp相关的功能-->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <!--文件的上传和下载-->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <!-- Redis客户端 -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>3.1.0-m1</version>
+    </dependency>
+    <!--搜索引擎-->
+      <dependency>
+          <groupId>org.apache.solr</groupId>
+          <artifactId>solr-solrj</artifactId>
+          <version>8.0.0</version>
+      </dependency>
+    <!-- dubbo相关 -->
+    <!--dubbo核心包-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.6.6</version>
+    </dependency>
+    <!--zookeeper-->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.5.4-beta</version>
+      <type>pom</type>
+    </dependency>
+    <!--对zookeeper的接口进行封装-->
+    <dependency>
+      <groupId>com.github.sgroschupf</groupId>
+      <artifactId>zkclient</artifactId>
+      <version>0.1</version>
+    </dependency>
+    <!--消息队列-->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-all</artifactId>
+      <version>5.15.9</version>
+    </dependency>
+    <!--freemarker-->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.28</version>
+    </dependency>
+
+
+
+
+
+
+
+  </dependencies>
+
+  <build>
+    <finalName>clothRecyleBin</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
