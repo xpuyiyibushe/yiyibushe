@@ -18,10 +18,11 @@
     </bean>
 
     <!--过滤静态资源-->
-    <mvc:resources mapping="/css/" location="/css/**"/>
-    <mvc:resources mapping="/images/" location="/images/**"/>
-    <mvc:resources mapping="/js/" location="/js/**"/>
-    <mvc:resources mapping="/fonts/" location="/fonts/**"/>
+    <!--使用这种方式，之前的还是访问不了静态资源-->
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/fonts/**" location="/fonts/"/>
     <!--开启SpringMVC注解的支持-->
     <mvc:annotation-driven/>
 </beans>

@@ -6,6 +6,7 @@ import com.yiyi.service.ArticleInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,10 +17,11 @@ public class ArticleController {
     private ArticleInfoService articleInfoService;
 
     @RequestMapping ("/addInfo")
-    public @ResponseBody AddResponse addInfo(@ModelAttribute UserInfo userInfo){
+    public @ResponseBody AddResponse addInfo(@ModelAttribute @RequestBody UserInfo userInfo){
         //构造json返回值，没有错的情况下默认返回值为true
         AddResponse addResponse = new AddResponse();
         System.out.println(userInfo);
+        System.out.println(addResponse);
         //调用service层添加信息
         try {
             articleInfoService.addUserInfo(userInfo);
