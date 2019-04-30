@@ -15,7 +15,7 @@ public class ArticleController {
     @Autowired
     private ArticleInfoService articleInfoService;
 
-    @RequestMapping("/add")
+    @RequestMapping ("/addInfo")
     public @ResponseBody AddResponse addInfo(@ModelAttribute UserInfo userInfo){
         //构造json返回值，没有错的情况下默认返回值为true
         AddResponse addResponse = new AddResponse();

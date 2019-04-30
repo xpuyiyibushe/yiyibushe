@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+	    http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+    <context:component-scan base-package="com.yiyi.service"/>
+    <context:component-scan base-package="com.yiyi.mapper"/>
+    <!--数据源-->
+    <!--数据库连接池-->
+    <context:property-placeholder location="classpath:properties/*.properties"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="url" value="jdbc:mysql://47.103.14.73:3306/clothing?characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="ndl.04551"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    </bean>
+
+    <!--sqlSession-->
+    <!--让spring管理sqlsessionfactory 使用mybatis和spring整合包中的-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载Mybatis的配置文件-->
+        <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml"/>
+    </bean>
+    <!--mapper扫描器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.yiyi.mapper"/>
+    </bean>
+
+    <!--配置Dao所在的包-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ningdali.dao"></property>
+    </bean>
+    <!--配置事务管理-->
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--配置spring开启事务注解通知-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yiyi.mapper.UserInfoMapper">
+    <resultMap id="userInfo" type="com.yiyi.pojo.UserInfo">
+        <id property="userName" column="user_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="userAddress" column="user_address"/>
+        <result property="article" column="article"/>
+        <result property="num" column="num"/>
+        <result property="userTele" column="user_tele"/>
+        <result property="clothStatus" column="cloth_status"/>
+    </resultMap>
+    <!--插入数据-->
+    <insert id="addUserInfo" parameterType="com.yiyi.pojo.UserInfo" >
+        insert into user_info values (#{userName},#{userId},#{userAddress},#{article},#{num},#{userTele},#{clothStatus});
+    </insert>
+</mapper>

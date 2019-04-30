@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置环境-->
+    <environments default="default">
+        <!--环境变量-->
+        <environment id="default">
+            <!--事务管理器-->
+            <transactionManager type="jdbc"/>
+            <!--数据源-->
+            <dataSource  type="pooled">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/clothing"/>
+                <property name="username" value="root"/>
+                <property name="password" value="ndl.04551"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--<mappers>-->
+        <!--<mapper resource="com.yiyi.mapper"/>-->
+    <!--</mappers>-->
+    <mappers>
+        <package name="com.yiyi.mapper"/>
+    </mappers>
+</configuration>

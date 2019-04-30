@@ -15,8 +15,8 @@
     <meta name="keywords" content="Humanity Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="./css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/css/style.css" rel='stylesheet' type='text/css' />
     <script src="./js/jquery.min.js"></script>
     <!--start-smoth-scrolling-->
     <script type="text/javascript" src="./js/move-top.js"></script>
